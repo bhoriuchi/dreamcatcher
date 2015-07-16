@@ -1,0 +1,47 @@
+{
+  "name": "dreamcatcher",
+  "version": "0.1.0",
+  "description": "Create a REST Web Service based on models defined in JSON format",
+  "main": "lib/dream.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhoriuchi/dreamcatcher.git"
+  },
+  "keywords": [
+    "bookshelf",
+    "knex",
+    "model",
+    "relations",
+    "filter",
+    "factory",
+    "rest",
+    "automated",
+    "restify",
+    "sql",
+    "orm"
+  ],
+  "author": "Branden Horiuchi <bhoriuchi@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/bhoriuchi/dreamcatcher",
+  "devDependencies": {
+    "mysql": "^2.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/bhoriuchi/dreamcatcher/issues"
+  },
+  "dependencies": {
+    "knex": "^0.8.6",
+    "knex-schemer": "^0.1.10",
+    "bookshelf": "^0.8.1",
+    "bookshelf-factory": "^0.1.2",
+    "restify": "^3.0.3",
+    "bluebird": "^2.9.27",
+    "lodash": "^3.9.3"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "directories": {
+    "example": "example"
+  }
+}
