@@ -1,6 +1,7 @@
 module.exports = function(c) {
 	
-	var auth = function() {
+	var auth = function(req) {
+		console.log("Auth: " + req);
 		return true;
 	};
 	var rest = {
