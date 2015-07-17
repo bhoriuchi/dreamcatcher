@@ -1,25 +1,23 @@
-module.exports = function(c) {
+module.exports = function(c, dream) {
 	
-	var auth = function(req) {
-		console.log("Auth: " + req);
-		return true;
-	};
+	//var c = dream.schemer.constants;
+	
 	var rest = {
 		methods: {
 			HEAD: {
-				auth: auth
+				auth: dream.auth.basic
 			},
 			GET: {
-				auth: auth
+				auth: dream.auth.basic
 			},
 			POST: {
-				auth: auth
+				auth: dream.auth.basic
 			},
 			PUT: {
-				auth: auth
+				auth: dream.auth.basic
 			},
 			DELETE: {
-				auth: auth
+				auth: dream.auth.basic
 			}
 		}
 	};
@@ -53,6 +51,12 @@ module.exports = function(c) {
         nickname: {
             id: {type: c.type.integer, primary: true, increments: true},
             name: {type: c.type.string, size: 200}
+        },
+        user: {
+            id: {type: c.type.integer, primary: true, increments: true},
+            name: {type: c.type.string, size: 200},
+            username: {type: c.type.string, size: 200},
+            password: {type: c.type.string, size: 500}
         }
     };
 };

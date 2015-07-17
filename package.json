@@ -36,7 +36,8 @@
     "bookshelf-factory": "^0.1.2",
     "restify": "^3.0.3",
     "bluebird": "^2.9.27",
-    "lodash": "^3.9.3"
+    "lodash": "^3.9.3",
+    "password-hash": "^1.2.2"
   },
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"

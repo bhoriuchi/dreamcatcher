@@ -73,5 +73,8 @@ module.exports = {
             { id: 11, name: "Shortcake"},
             { id: 12, name: "Sweetcheeks"},
             { id: 13, name: "Puddin"}
+        ],
+        user: [
+            { id: 1, name: "Branden", username: "branden", password: "sha1$0fbd3e0d$1$b8caf7458c8eed89e836f9743273ac3a4d3df39d"}
         ]
 };
