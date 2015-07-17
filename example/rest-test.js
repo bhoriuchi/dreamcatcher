@@ -12,7 +12,7 @@ var config = {
 };
 
 var dream  = require("../lib/dream")(config);
-var schema = require('./sample-schema')(dream.schemer.constants, dream);
+var schema = require('./sample-schema')(dream);
 
 
 var routes = dream.getRoutes(schema);

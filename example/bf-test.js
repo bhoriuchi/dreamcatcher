@@ -12,8 +12,9 @@ var config = {
 };
 
 // import the modules
-var factory   = require('bookshelf-factory')(config);
-var schema    = require('./sample-schema')(factory.schemer.constants);
+var dream     = require('../lib/dream')(config);
+var factory   = dream.factory;
+var schema    = require('./sample-schema')(dream);
 var data      = require('./sample-data');
 var models;
 // validate the schema
