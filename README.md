@@ -30,7 +30,7 @@ var config = {
 };
 
 // require the package passing the config
-var factory = require('dreamcatcher')(config);
+var dream = require('dreamcatcher')(config);
 
 ```
 
