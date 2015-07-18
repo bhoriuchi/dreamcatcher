@@ -28,8 +28,8 @@ module.exports = function(dream) {
         survivor: {
             sid: {type: c.type.integer, primary: true, increments: true, views: ['summary']},
             name: {type: c.type.string, size: 100, views: ['summary']},
-            groups: {belongsToMany: 'group', views: ['summary']},
-            notes: {type: c.type.string, size: 200, nullable: true, defaultTo: 'default notes', views: ['summary']},
+            groups: {belongsToMany: 'group'},
+            notes: {type: c.type.string, size: 200, nullable: true, defaultTo: 'default notes'},
             _rest: rest
         },
         group: {
