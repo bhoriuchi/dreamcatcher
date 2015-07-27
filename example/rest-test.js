@@ -17,5 +17,21 @@ var schema = require('./sample-schema')(dream);
 
 var routes = dream.getRoutes(schema);
 
+
+// add datatables static content
+
+routes.push({
+	method: "GET",
+	path: "\/public\/test.txt",
+	handler: function() {
+		console.log('static add-in');
+		dream.restify.serveStatic({
+			directory: './'
+		});
+		
+	}
+});
+
+
 dream.run(routes);
 
