@@ -29,19 +29,22 @@ $(document).ready(function() {
 		"processing": true,
         "serverSide": true,
         "ajax": {
-		"url": "http://127.0.0.1:8080/pagemaker/datatables",
-		"type": "GET",
-		"crossDomain": true,
-		"headers": {"Accept": "application/json"}
-	},
-	"columns": [
-		{ "data": "id" },
-		{ "data": "original_title" },
-		{ "data": "original_language" },
-		{ "data": "release_date" },
-		{ "data": "title" },
-		{ "data": "popularity" } 
-	]
+		    "url": "http://127.0.0.1:8080/survivors",
+		    "type": "GET",
+		    "crossDomain": true,
+		    "headers": {
+		    	"Accept": "application/json+datatables"
+		    },
+		    beforeSend: function (xhr){
+		         xhr.setRequestHeader('Authorization', 'Basic YnJhbmRlbjpwYXNzd29yZA==');
+		    }
+	    },
+	    "columns": [
+		    { "data": "sid" },
+		    { "data": "name" },
+		    { "data": "notes" },
+		    { "data": "actor_id" }
+	    ]
 	});
 
 	$('#example').DataTable().columns().every( function () {
@@ -74,22 +77,18 @@ $(document).ready(function() {
 <table id="example" class="display compact" cellspacing="0" width="100%">
   <thead>
     <tr>
-      <th>id</th>
-      <th>original_title</th>
-      <th>original_language</th>
-      <th>release_date</th>
-      <th>title</th>
-      <th>popularity</th>
+      <th>sid</th>
+      <th>name</th>
+      <th>notes</th>
+      <th>actor_id</th>
     </tr>
   </thead>
   <tfoot>
     <tr>
-      <th>id</th>
-      <th>original_title</th>
-      <th>original_language</th>
-      <th>release_date</th>
-      <th>title</th>
-      <th>popularity</th>
+      <th>sid</th>
+      <th>name</th>
+      <th>notes</th>
+      <th>actor_id</th>
     </tr>
   </tfoot>
 </table>
