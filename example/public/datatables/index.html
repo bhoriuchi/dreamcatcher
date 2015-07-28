@@ -29,11 +29,12 @@ $(document).ready(function() {
 		"processing": true,
         "serverSide": true,
         "ajax": {
-		    "url": "http://127.0.0.1:8080/survivors",
+		    "url": "http://127.0.0.1:8080/api/survivors",
 		    "type": "GET",
 		    "crossDomain": true,
 		    "headers": {
-		    	"Accept": "application/json+datatables"
+		    	"Accept": "application/json+datatables",
+		    	"Accept-Version": "0.1.1"
 		    },
 		    beforeSend: function (xhr){
 		         xhr.setRequestHeader('Authorization', 'Basic YnJhbmRlbjpwYXNzd29yZA==');

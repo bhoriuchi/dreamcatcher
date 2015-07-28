@@ -1,27 +1,21 @@
-// v0.1.0 survivor model
+// v0.1.1 group model
 
 module.exports = function (dream) {
 	
 	return {
-        sid: {
+        id: {
             type: dream.schemer.constants.type.integer,
             primary: true,
-            increments: true,
-            views: ['summary']
+            increments: true
         },
         name: {
             type: dream.schemer.constants.type.string,
             size: 100,
             views: ['summary']
         },
-        groups: {
-            belongsToMany: 'group'
-        },
-        notes: {
-            type: dream.schemer.constants.type.string,
-            size: 200,
-            nullable: true,
-            defaultTo: 'default notes'
+        station: {
+            hasOne: 'station',
+            nullable: true
         },
         _rest: {
             methods: {
@@ -42,5 +36,5 @@ module.exports = function (dream) {
                 }
             }
         }
-	};
+    };
 };

@@ -1,18 +1,36 @@
 // v0.1.0 group model
 
-module.exports = function (args) {
+module.exports = function (dream) {
 	
 	return {
         id: {
-            type: args.type.integer,
+            type: dream.schemer.constants.type.integer,
             primary: true,
             increments: true
         },
         name: {
-            type: args.type.string,
+            type: dream.schemer.constants.type.string,
             size: 100,
             views: ['summary']
         },
-        _rest: args.rest
+        _rest: {
+            methods: {
+                HEAD: {
+                    auth: dream.auth.basic
+                },
+                GET: {
+                    auth: false
+                },
+                POST: {
+                    auth: dream.auth.basic
+                },
+                PUT: {
+                    auth: dream.auth.basic
+                },
+                DELETE: {
+                    auth: dream.auth.basic
+                }
+            }
+        }
     };
 };

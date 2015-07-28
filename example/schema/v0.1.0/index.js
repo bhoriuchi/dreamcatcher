@@ -1,8 +1,9 @@
 // v0.1.0 models
 
-module.exports = function(args) {
+module.exports = function(dream) {
 	return {
-		group: require('./group')(args),
-		survivor: require('./survivor')(args)
+		group: require('./group')(dream),
+		survivor: require('./survivor')(dream),
+		user: require('./user')(dream)
 	};
 };
