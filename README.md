@@ -56,6 +56,7 @@ var config = {
 
 // require the package and pass the db connection config
 var dream = require('dreamcatcher')(config);
+var type  = dream.schemer.constants.type;
 
 // define a schema in schemer format that has been extended to use 
 // bookshelf-factory and dreamcatcher field extensions
