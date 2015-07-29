@@ -76,5 +76,8 @@ module.exports = {
         ],
         user: [
             { id: 1, name: "Branden", username: "branden", password: "sha1$0fbd3e0d$1$b8caf7458c8eed89e836f9743273ac3a4d3df39d"}
+        ],
+        whitelist: [
+               { id: 1, ipAddress: "::1", route: "*", method: "*"}
         ]
 };

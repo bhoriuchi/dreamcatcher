@@ -57,6 +57,12 @@ module.exports = function(dream) {
             name: {type: c.type.string, size: 200},
             username: {type: c.type.string, size: 200},
             password: {type: c.type.string, size: 500}
+        },
+        whitelist: {
+            id: {type: c.type.integer, primary: true, increments: true},
+            ipAddress: {type: c.type.string, size: 200},
+            route: {type: c.type.string, size: 500},
+            method: {type: c.type.string, size: 8}
         }
     };
 };

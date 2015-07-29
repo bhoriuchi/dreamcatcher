@@ -1,29 +1,28 @@
-// v0.1.0 survivor model
+// v0.1.0 whitelist model
 
 module.exports = function (dream) {
 	
 	return {
-        sid: {
+        id: {
             type: dream.schemer.constants.type.integer,
             primary: true,
-            increments: true,
-            views: ['summary']
+            increments: true
         },
-        name: {
-            type: dream.schemer.constants.type.string,
-            size: 100,
-            views: ['summary']
-        },
-        groups: {
-            belongsToMany: 'group'
-        },
-        notes: {
+        ipAddress: {
             type: dream.schemer.constants.type.string,
             size: 200,
-            nullable: true,
-            defaultTo: 'default notes'
+            views: ['summary']
+        },
+        route: {
+            type: dream.schemer.constants.type.string,
+            size: 500,
+        },
+        method: {
+            type: dream.schemer.constants.type.string,
+            size: 8
         },
         _rest: {
+            pluralize: false,
             methods: {
                 HEAD: {
                     auth: dream.auth.whitelist
@@ -42,5 +41,5 @@ module.exports = function (dream) {
                 }
             }
         }
-	};
+    };
 };
