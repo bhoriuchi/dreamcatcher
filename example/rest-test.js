@@ -17,7 +17,8 @@ var config = {
 		paginate: require('./custom-paginate'),
 		basePath: '/api',
 		versions: ['0.1.0', '0.1.1'],
-		port: 8080
+		port: 8080,
+		cors: {}
 	}
 };
 

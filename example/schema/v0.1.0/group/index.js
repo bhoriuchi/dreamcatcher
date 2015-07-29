@@ -14,12 +14,19 @@ module.exports = function (dream) {
             views: ['summary']
         },
         _rest: {
+            service: {
+                path: '/lost'
+            },
             methods: {
                 HEAD: {
                     auth: dream.auth.basic
                 },
                 GET: {
-                    auth: false
+                    auth: dream.auth.basic,
+                    handler: function(req, res, next) {
+                        res.send({"message": "this is an example of overriding the handler"});
+                        next();
+                    }
                 },
                 POST: {
                     auth: dream.auth.basic
