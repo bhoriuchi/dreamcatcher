@@ -12,8 +12,8 @@ module.exports = function (dream) {
                 GET: {
                     auth: dream.auth.basic,
                     handler: function(req, res, next) {
-                    	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-                    	console.log(ip);
+                        var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+                        console.log(ip);
                         res.send({"message": "this would produce an action without creating a data model"});
                         next();
                     }
