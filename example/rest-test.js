@@ -2,6 +2,11 @@
 // Author: Branden Horiuchi <bhoriuchi@gmail.com>
 //
 
+var passport = require('passport');
+var BasicStrategy    = require('passport-http').BasicStrategy;
+
+
+
 // create a dreamcatcher config
 var config = {
 	"client": "mysql",
@@ -18,7 +23,8 @@ var config = {
 		basePath: '/api',
 		versions: ['0.1.0', '0.1.1'],
 		port: 8080,
-		cors: {}
+		cors: {},
+		use: [passport.initialize()]
 	}
 };
 
@@ -29,7 +35,18 @@ var data      = require('./sample-data');
 var factory   = dream.factory;
 
 
+passport.use(new BasicStrategy(function(username, password, done) {
+	return dream.knex('user').where('username', username).then(function(results) {
+		if (results.length > 0 && results[0].hasOwnProperty('password')) {
 
+			return done(null, dream.passwordHash.verify(password, results[0].password));
+		}
+		return done(null, false);
+	});
+	
+}));
+
+dream.passport = passport;
 
 
 // create multi version api
@@ -64,6 +81,8 @@ factory.schemer.drop(schema).then(function() {
 			// get routes from the schema
 			var routes = dream.getRoutes(schemas);
 
+			//console.log(routes);
+			//process.exit();
 			
 			// add datatables static content to routes
 			routes.push({

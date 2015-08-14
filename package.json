@@ -24,7 +24,9 @@
   "license": "MIT",
   "homepage": "https://github.com/bhoriuchi/dreamcatcher",
   "devDependencies": {
-    "mysql": "^2.7.0"
+    "mysql": "^2.7.0",
+    "passport": "^0.2.2",
+    "passport-http": "^0.2.2"
   },
   "bugs": {
     "url": "https://github.com/bhoriuchi/dreamcatcher/issues"
