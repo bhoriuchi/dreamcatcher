@@ -49,7 +49,6 @@ schemas.push({
 
 
 
-
 // prepare the schema
 schema = factory.prepareSchema(schema) || {};
 
@@ -64,6 +63,7 @@ factory.schemer.drop(schema).then(function() {
 			
 			// get routes from the schema
 			var routes = dream.getRoutes(schemas);
+
 			
 			// add datatables static content to routes
 			routes.push({

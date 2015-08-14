@@ -29,7 +29,10 @@ module.exports = function (dream) {
                     auth: dream.auth.whitelist
                 },
                 GET: {
-                    auth: dream.auth.whitelist
+                    auth: {
+                    	handler: dream.auth.basic,
+                    	arguments: []
+                    }
                 },
                 POST: {
                     auth: dream.auth.whitelist
