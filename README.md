@@ -1,9 +1,8 @@
 
-
-# dreamcatcher
+![dreamcatcher](https://github.com/bhoriuchi/dreamcatcher/blob/master/public/assets/images/dreamcatcher.png)
 ---
-dreamcatcher is a tool that extends the [knex-schemer and bookshelf-factory schema definition](https://github.com/bhoriuchi/bookshelf-factory/wiki/Define-Schema) format to produce a rest web service using [restify](http://mcavage.me/node-restify/) to perform CRUD operations
-on resources stored in a relational database. At its core, dreamcatcher uses bookshelf and knex to perform the actual database access, and bookshelf-factory to produce the models.
+**dreamcatcher** is a tool that allows you to design, create, and serve a **REST** webservice using **JSON**. The tool uses **[bookshelf-factory](https://github.com/bhoriuchi/bookshelf-factory/wiki)** to create, update, and delete **relational database** entries and **[restify](http://mcavage.me/node-restify/)** to serve the webservice
+
 
 * See the **[WIKI](https://github.com/bhoriuchi/dreamcatcher/wiki)** for full documentation
 * And the **[Change Log](https://github.com/bhoriuchi/dreamcatcher/wiki/Change-Log)** for what's new
