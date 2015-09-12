@@ -29,7 +29,7 @@ module.exports = function (dream) {
                     auth: dream.auth.whitelist
                 },
                 GET: {
-                    auth: dream.passport.authenticate('basic', {session: false, failureFlash: false})
+                    auth: dream.registry.passport.authenticate('basic', {session: false, failureFlash: false})
                 },
                 POST: {
                     auth: dream.auth.whitelist

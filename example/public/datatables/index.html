@@ -29,7 +29,7 @@ $(document).ready(function() {
 		"processing": true,
         "serverSide": true,
         "ajax": {
-		    "url": "http://127.0.0.1:8080/api/survivors",
+		    "url": "http://localhost:8080/api/survivors",
 		    "type": "GET",
 		    "crossDomain": true,
 		    "headers": {
@@ -38,14 +38,13 @@ $(document).ready(function() {
 		    	"Accept-Version": "0.1.1"
 		    },
 		    beforeSend: function (xhr){
-		         xhr.setRequestHeader('Authorization', 'Basic YnJhbmRlbjpwYXNzd29yZA==');
+		         xhr.setRequestHeader('Authorization', 'Basic YWRtaW46cGFzc3dvcmQ=');
 		    }
 	    },
 	    "columns": [
 		    { "data": "sid" },
 		    { "data": "name" },
-		    { "data": "notes" },
-		    { "data": "actor_id" }
+		    { "data": "notes" }
 	    ]
 	});
 
@@ -82,7 +81,6 @@ $(document).ready(function() {
       <th>sid</th>
       <th>name</th>
       <th>notes</th>
-      <th>actor_id</th>
     </tr>
   </thead>
   <tfoot>
@@ -90,7 +88,6 @@ $(document).ready(function() {
       <th>sid</th>
       <th>name</th>
       <th>notes</th>
-      <th>actor_id</th>
     </tr>
   </tfoot>
 </table>

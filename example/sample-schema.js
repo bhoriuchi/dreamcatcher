@@ -1,6 +1,6 @@
 module.exports = function(dream) {
 	
-	var c = dream.schemer.constants;
+	var c = dream.mods.schemer.constants;
 	
 	var rest = {
 		methods: {
