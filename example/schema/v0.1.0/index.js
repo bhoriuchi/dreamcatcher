@@ -6,6 +6,7 @@ module.exports = function(dream) {
 		group: require('./group')(dream),
 		survivor: require('./survivor')(dream),
 		user: require('./user')(dream),
-		action: require('./action')(dream)
+		action: require('./action')(dream),
+		actor: require('./actor')(dream)
 	};
 };

@@ -4,7 +4,7 @@
 
 var passport      = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
-
+var _             = require('lodash');
 
 
 // create a dreamcatcher config
@@ -28,7 +28,7 @@ var config = {
 
 // import modules, configurations and data
 var dream     = require("../lib/dreamcatcher")(config);
-var schema    = require('./sample-schema')(dream);
+//var schema    = require('./sample-schema')(dream);
 var data      = require('./sample-data');
 var factory   = dream.factory;
 
@@ -65,11 +65,13 @@ schemas.push({
 });
 
 
-
+var s = _.clone(schemas[1].schema);
+s = _.merge(s, schemas[0].schema);
 
 // prepare the schema
-schema = factory.prepareSchema(schema) || {};
+var schema = factory.prepareSchema(s) || {};
 
+//console.log(schema.survivor);
 
 //drop the schema
 factory.schemer.drop(schema).then(function() {
