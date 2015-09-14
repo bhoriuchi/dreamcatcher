@@ -65,11 +65,8 @@ schemas.push({
 });
 
 
-var s = _.clone(schemas[1].schema);
-s = _.merge(s, schemas[0].schema);
-
 // prepare the schema
-var schema = factory.prepareSchema(s) || {};
+var schema = dream.mergeSchema(schemas) || {};
 
 //console.log(schema.survivor);
 

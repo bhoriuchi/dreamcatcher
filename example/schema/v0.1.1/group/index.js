@@ -10,7 +10,7 @@ module.exports = function (dream) {
         },
         name: {
             type: dream.schemer.constants.type.string,
-            size: 100,
+            size: 200,
             views: ['summary']
         },
         station: {
