@@ -6,16 +6,23 @@ module.exports = function (dream) {
         id: {type: dream.schemer.constants.type.integer, primary: true, increments: true},
         name: {type: dream.schemer.constants.type.string, size: 200},
         character: {hasOne: 'survivor', nullable: true},
+        notes: {
+        	type: 'string',
+        	versioned: true
+        },
         _rest: {
+        	//auth: true,//dream.registry.passport.authenticate('basic', {session: false, failureFlash: false}),
             methods: {
-                HEAD: {
-                    auth: dream.auth.whitelist
-                },
-                GET: {
-                    auth: dream.registry.passport.authenticate('basic', {session: false, failureFlash: false})
-                },
+                HEAD: {},
+                GET: {},
                 POST: {
-                    auth: dream.auth.whitelist
+                    auth: dream.registry.passport.authenticate('basic', {session: false, failureFlash: false}),
+                    action: {
+                    	test: function(req, res, next) {
+                    		res.send({message: "test"});
+                    		return next();
+                    	}
+                    }
                 },
                 PUT: {
                     auth: dream.auth.whitelist

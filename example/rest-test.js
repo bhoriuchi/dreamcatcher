@@ -49,6 +49,7 @@ passport.use(new BasicStrategy(function(username, password, done) {
 	
 }));
 
+dream.register.authentication(false);
 
 // create multi version api
 var schemas   = [];
@@ -81,19 +82,13 @@ factory.schemer.drop(schema).then(function() {
 			
 			// get routes from the schema
 			var routes = dream.getRoutes(schemas);
-
-			//console.log(routes);
-			//process.exit();
 			
-			// add datatables static content to routes
-			routes.push({
-				method: "GET",
+			routes.push(dream.staticRoute({
 				path: /\/datatables\/?.*/,
-				handler: dream.restify.serveStatic({
-					directory: __dirname + '/public',
-					'default': 'index.html'
-				})
-			});
+				directory: __dirname + '/public',
+				'default': 'index.html'
+			}));
+			
 
 			// run the server
 			dream.run(routes);
