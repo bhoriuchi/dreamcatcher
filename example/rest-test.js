@@ -39,6 +39,7 @@ dream.register.middleware(passport.initialize());
 dream.register.set('passport', passport);
 
 passport.use(new BasicStrategy(function(username, password, done) {
+	
 	return dream.mods.knex('user').where('username', username).then(function(results) {
 		if (results.length > 0 && results[0].hasOwnProperty('password')) {
 
@@ -49,7 +50,13 @@ passport.use(new BasicStrategy(function(username, password, done) {
 	
 }));
 
-dream.register.authentication(false);
+// register authentication
+dream.register.authentication({
+	module: dream.registry.passport,
+	authenticate: 'authenticate',
+	arguments: ['basic', {session: false, failureFlash: false}]
+});
+
 
 // create multi version api
 var schemas   = [];

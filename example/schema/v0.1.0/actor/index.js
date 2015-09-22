@@ -11,12 +11,14 @@ module.exports = function (dream) {
         	versioned: true
         },
         _rest: {
-        	//auth: true,//dream.registry.passport.authenticate('basic', {session: false, failureFlash: false}),
+        	//auth: false,//dream.registry.passport.authenticate('basic', {session: false, failureFlash: false}),
             methods: {
                 HEAD: {},
-                GET: {},
+                GET: {
+                	//auth: true
+                },
                 POST: {
-                    auth: dream.registry.passport.authenticate('basic', {session: false, failureFlash: false}),
+                    //auth: dream.registry.passport.authenticate('basic', {session: false, failureFlash: true}),
                     action: {
                     	test: function(req, res, next) {
                     		res.send({message: "test"});
@@ -25,10 +27,10 @@ module.exports = function (dream) {
                     }
                 },
                 PUT: {
-                    auth: dream.auth.whitelist
+                   // auth: dream.auth.whitelist
                 },
                 DELETE: {
-                    auth: dream.auth.whitelist
+                   // auth: dream.auth.whitelist
                 }
             }
         }
