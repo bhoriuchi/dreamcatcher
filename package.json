@@ -40,7 +40,8 @@
     "restify": "^4.0.0",
     "bluebird": "^2.9.34",
     "lodash": "^3.10.1",
-    "password-hash": "^1.2.2"
+    "password-hash": "^1.2.2",
+    "path": "^0.12.7"
   },
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"

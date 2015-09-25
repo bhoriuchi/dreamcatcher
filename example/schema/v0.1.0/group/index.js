@@ -18,14 +18,20 @@ module.exports = function (dream) {
                 path: '/lost'
             },
             methods: {
-                HEAD: {
-                    auth: dream.auth.basic
-                },
+                HEAD: {},
                 GET: {
-                    auth: dream.auth.basic,
-                    handler: function(req, res, next) {
-                        res.send({"message": "this is an example of overriding the handler"});
-                        next();
+                    handler: {
+                    	useDefaults: true,
+                    	routes: [
+                    	    {
+                    	    	route: '/:id/execute/',
+                    	    	auth: true,
+                    	    	handler: function(req, res, next) {
+                    	    		res.send({message: 'execute a new instance'});
+                    	    		return next();
+                    	    	}
+                    	    }
+                    	]
                     }
                 },
                 POST: {
