@@ -37,6 +37,19 @@ var factory   = dream.factory;
 dream.register.pagination('custom', require('./custom-paginate'));
 dream.register.middleware(passport.initialize());
 dream.register.set('passport', passport);
+dream.register.event({
+	event: 'logRequest',
+	listener: function(message) {
+		console.log(message);
+	}
+});
+dream.register.event({
+	type: 'once',
+	event: 'logRequest',
+	listener: function(message) {
+		console.log('ONCE', message);
+	}
+});
 
 passport.use(new BasicStrategy(function(username, password, done) {
 	
