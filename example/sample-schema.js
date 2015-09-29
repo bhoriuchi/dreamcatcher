@@ -25,12 +25,13 @@ module.exports = function(dream) {
 	
 	
 	return {
-        survivor: {
+        lost_survivor: {
             sid: {type: c.type.integer, primary: true, increments: true, views: ['summary']},
             name: {type: c.type.string, size: 100, views: ['summary']},
             groups: {belongsToMany: 'group'},
             notes: {type: c.type.string, size: 200, nullable: true, defaultTo: 'default notes'},
-            _rest: rest
+            _rest: rest,
+            _model: {name: 'survivor'}
         },
         group: {
             id: {type: c.type.integer, primary: true, increments: true},

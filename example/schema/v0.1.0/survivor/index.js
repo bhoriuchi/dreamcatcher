@@ -23,6 +23,7 @@ module.exports = function (dream) {
             nullable: true,
             defaultTo: 'default notes'
         },
+        _model: {name: 'survivor'},
         _rest: {
             methods: {
                 HEAD: {

@@ -89,7 +89,7 @@ schemas.push({
 // prepare the schema
 var schema = dream.mergeSchema(schemas) || {};
 
-//console.log(schema.survivor);
+console.log(schema);
 
 //drop the schema
 factory.schemer.drop(schema).then(function() {

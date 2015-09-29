@@ -1,5 +1,5 @@
 module.exports = {
-		survivor: [
+		lost_survivor: [
             { sid: 1, name: "Hugo Reyes", fk_actor_character_id: 2 },
             { sid: 2, name: "Sayid Jarrah"},
             { sid: 3, name: "Jack Shephard", fk_actor_character_id: 1 },
