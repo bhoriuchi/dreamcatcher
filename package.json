@@ -42,7 +42,8 @@
     "lodash": "^3.10.1",
     "password-hash": "^1.2.2",
     "path": "^0.12.7",
-    "events": "^1.0.2"
+    "events": "^1.0.2",
+    "handlebars": "^4.0.3"
   },
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
