@@ -86,10 +86,13 @@ schemas.push({
 });
 
 
+
+
+
 // prepare the schema
 var schema = dream.mergeSchema(schemas) || {};
 
-console.log(schema);
+//console.log(schema);
 
 //drop the schema
 factory.schemer.drop(schema).then(function() {
