@@ -37,7 +37,7 @@
     "bookshelf": "^0.8.1",
     "bookshelf-factory": "git+https://github.com/bhoriuchi/bookshelf-factory.git",
     "dotprune": "^0.1.1", 
-    "restify": "^4.0.0",
+    "restify": "^4.0.3",
     "bluebird": "^2.9.34",
     "lodash": "^3.10.1",
     "password-hash": "^1.2.2",
