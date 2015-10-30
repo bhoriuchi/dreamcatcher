@@ -36,7 +36,7 @@
     "knex-schemer": "git+https://github.com/bhoriuchi/knex-schemer.git#master",
     "bookshelf": "^0.8.1",
     "bookshelf-factory": "git+https://github.com/bhoriuchi/bookshelf-factory.git",
-    "dotprune": "^0.1.1", 
+    "dotprune": "^0.1.4", 
     "restify": "^4.0.3",
     "bluebird": "^2.9.34",
     "lodash": "^3.10.1",
