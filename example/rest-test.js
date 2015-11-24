@@ -27,7 +27,7 @@ var config = {
 };
 
 // import modules, configurations and data
-var dream     = require("../lib/dreamcatcher")(config);
+var dream     = require("../lib/dream")(config);
 //var schema    = require('./sample-schema')(dream);
 var data      = require('./sample-data');
 var factory   = dream.factory;

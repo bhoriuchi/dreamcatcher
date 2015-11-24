@@ -2,7 +2,7 @@
   "name": "dreamcatcher",
   "version": "1.0.0",
   "description": "Create a REST Web Service based on models defined in JSON format",
-  "main": "lib/dreamcatcher.js",
+  "main": "lib/dream.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bhoriuchi/dreamcatcher.git"
@@ -24,26 +24,25 @@
   "license": "MIT",
   "homepage": "https://github.com/bhoriuchi/dreamcatcher",
   "devDependencies": {
-    "mysql": "^2.8.0",
-    "passport": "^0.2.2",
-    "passport-http": "^0.2.2"
+    "mysql": "^2.9.0",
+    "passport": "^0.3.0",
+    "passport-http": "^0.3.0"
   },
   "bugs": {
     "url": "https://github.com/bhoriuchi/dreamcatcher/issues"
   },
   "dependencies": {
-    "knex": "^0.8.6",
-    "knex-schemer": "git+https://github.com/bhoriuchi/knex-schemer.git#master",
-    "bookshelf": "^0.8.1",
     "bookshelf-factory": "git+https://github.com/bhoriuchi/bookshelf-factory.git",
-    "dotprune": "^0.1.4", 
+    "knex": "^0.9.0",
+    "bookshelf": "^0.9.1",
+    "dotprune": "^0.1.5", 
     "restify": "^4.0.3",
-    "bluebird": "^2.9.34",
+    "bluebird": "^3.0.5",
     "lodash": "^3.10.1",
     "password-hash": "^1.2.2",
     "path": "^0.12.7",
-    "events": "^1.0.2",
-    "handlebars": "^4.0.3",
+    "events": "^1.1.0",
+    "handlebars": "^4.0.4",
     "socket.io": "^1.3.7"
   },
   "scripts": {
